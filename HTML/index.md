@@ -63,3 +63,39 @@ We can write inline JavaScript into the html tag
 
 ```html
 <button onClick="alert('Hello, world!')">Click me</button>
+```
+
+### Internal JavaScript
+
+To write internal JavaScript we can place all JavaScript code inside the script tag
+
+```html
+ <script>
+    function showAlert() {
+      alert('Hello, world!');
+    }
+  </script>
+  ```
+
+  ### External Javascript
+
+  External JavaScript involves linking to an external JavaScript file using the script tag with the src attribute. This method allows for the reuse of JavaScript code across multiple HTML documents.
+
+  ```html
+  <!DOCTYPE html>
+<html>
+<head>
+  <title>External JavaScript Example</title>
+  <script src="script.js"></script>
+</head>
+<body>
+  <button onclick="showAlert()">Click me</button>
+</body>
+</html>
+```
+```javascript
+//script.js
+function showAlert() {
+  alert('Hello, world!');
+}
+```
