@@ -158,3 +158,20 @@ Ideal for scripts that do not need to block the HTML parsing.
 Use for independent scripts that do not rely on the DOM or other scripts.
 Suitable for analytics, ads, or any script that can run independently.
 Ideal for improving page load times by not blocking HTML parsing.
+
+
+## Why do we use symentic tag?
+
+Semantic tags in HTML provide meaningful structure to web pages by describing the content they contain. Their use offers several key benefits:
+
+__1. Improved Accessibility:__ Semantic tags enhance accessibility for users relying on assistive technologies such as screen readers. These tools can interpret and navigate the content more effectively when it is marked up semantically.
+
+__2. SEO Benefits:__ Search engines leverage semantic tags to better understand and index the content of a webpage. Proper use of these tags can improve a site's search engine ranking by providing clearer context about the content.
+
+__3. Enhanced Readability for Developers:__ Using semantic tags makes HTML code more readable and easier to understand. Developers can quickly identify the purpose of different sections of the page, such as headers, navigation, main content, and footers.
+
+__4. Consistency and Standardization:__ Semantic tags promote a standardized approach to web development, which is recognized and understood universally by developers. This consistency can lead to better collaboration and maintainability.
+
+__5. Improved Maintainability:__ With a clear structure provided by semantic tags, the codebase becomes easier to maintain. Updates and changes can be made more efficiently, as the roles of different sections are well-defined.
+
+__6. Separation of Concerns:__ Semantic tags help separate content from design. This separation allows developers to apply styles using CSS and dynamic behaviors using JavaScript more effectively, leading to a more maintainable and scalable codebase.
