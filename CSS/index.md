@@ -1,6 +1,6 @@
 ## what is Specificity in css?
 
- Specificit ydetermines which styles are applied when multiple rules could apply to the same element.
+ Specificity determines which styles are applied when multiple rules could apply to the same element.
 
  #### Order of Specificity:
 

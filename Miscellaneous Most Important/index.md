@@ -1,0 +1,41 @@
+- What are FCP, LCP, CLS, and TTI?
+- What is Lighthouse?
+- What is forwardRef in React?
+- What is CORS (Cross-Origin Resource Sharing)?
+- What is Docker?
+- What tools do you use for performance optimization and memory leakage (e.g., Profiler)?
+- Is Node.js single-threaded or multi-threaded?
+- How can page load time be improved?
+- How to reduce the bundle size of a React application?
+- Which is better, Next.js or React.js, and why?
+- How do you deploy your code?
+- What is a CI/CD pipeline?
+- How to ensure your code performs well in a browser?
+- What does having a strong understanding of testing involve?
+- What do you check when you perform a code review?
+- Why is documentation important?
+- What is the importance of key props in React?
+- Do you know about GraphQL?
+- What is the Atomic Design Pattern?
+- What are some common design patterns?
+- What is SonarQube?
+- What is a closure in JavaScript?
+- What is the event loop in JavaScript?
+- What is hoisting in JavaScript?
+- What are React hooks?
+- What is Redux?
+- How would you implement login functionality?
+- How do call, bind, and apply work in JavaScript?
+- What is event bubbling in JavaScript?
+- How does React-Redux flow compare to Context API?
+- What are Higher-Order Components (HOCs) in React?
+- How to prevent unnecessary re-rendering in React, including error boundaries?
+- What are the lifecycle methods in React?
+- How to create a form application with a generic button in React?
+- What are the basics of Next.js?
+- What testing libraries like Jest are available for JavaScript?
+- What is the difference between props and state in React?
+- What are stateful and stateless components in React?
+- What are controlled and uncontrolled components in React?
+- Why use different UI libraries like Ant Design or Material UI?
+- What is Babel and what does it do?

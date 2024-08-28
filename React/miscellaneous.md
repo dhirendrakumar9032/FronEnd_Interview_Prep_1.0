@@ -171,3 +171,112 @@ __Throttling/Debouncing:__ Use throttling or debouncing for event handlers that 
 
 ### 12. Avoiding Inline Styles
 Use CSS classes instead of inline styles to reduce re-renders caused by new style objects.
+
+
+## what is debauncing and why we use it?
+Debouncing is a programming technique used to ensure that a function is not called too frequently. This is particularly useful when dealing with events that can fire multiple times in quick succession, such as keystrokes,calling api on search, window resizing, scrolling, or mouse movements.
+
+```javascript
+import React,{useState,useEffect} from 'react';
+
+const callApi=(query)=>{
+  console.log('Calling',query);
+}
+
+const debaunce=(fn,delay)=>{
+  let timerId=null;// declair to hold the previous setTimeoutId
+  return function(...args){
+    if (timerId) clearTimeout(timerId);// this used to clear previous setTimeout
+    timerId=setTimeout(()=>{// create new setTimeoutId
+      fn(...args);
+    },delay);
+  }
+}
+
+const debaunceApi=debaunce(callApi,1000);
+
+export function App(props) {
+  const [query,setQuery]=useState('')
+
+const handleChange=(e)=>{
+  setQuery(e.target.value);
+}
+
+
+useEffect(()=>{
+  debaunceApi(query);
+},[query])
+
+
+  return (
+    <div className='App'>
+      <h1>Hello React.</h1>
+      <input value={query} onChange={handleChange}/>
+    </div>
+  );
+}
+```
+
+## what is Throttling? why we use that.
+Throttling is a technique in which, no matter how many times the user fires the event, the attached function will be executed only once in a given time interval.
+
+```js 
+import React, { useState, useEffect } from 'react';
+
+// Throttle function without using apply
+const throttle = (fn, limit) => {
+  let lastFunc;
+  let lastRan;
+  return function(...args) {
+    const context = this;
+    if (!lastRan) {
+      fn(...args);
+      lastRan = Date.now();
+    } else {
+      clearTimeout(lastFunc);
+      lastFunc = setTimeout(() => {
+        if ((Date.now() - lastRan) >= limit) {
+          fn(...args);
+          lastRan = Date.now();
+        }
+      }, limit - (Date.now() - lastRan));
+    }
+  }
+}
+
+// Function to simulate an API call
+const callApi = (query) => {
+  console.log(`Calling API with query: ${query}`);
+};
+
+const App = () => {
+  const [query, setQuery] = useState('');
+
+  // Throttled version of the API call function
+  const throttledCallApi = throttle(callApi, 1000);
+
+  const handleChange = (e) => {
+    setQuery(e.target.value);
+  };
+
+  useEffect(() => {
+    if (query) {
+      throttledCallApi(query);
+    }
+  }, [query, throttledCallApi]);
+
+  return (
+    <div className="App">
+      <h1>Search Input with Throttling</h1>
+      <input
+        type="text"
+        value={query}
+        onChange={handleChange}
+        placeholder="Type to search..."
+      />
+    </div>
+  );
+};
+
+export default App;
+```

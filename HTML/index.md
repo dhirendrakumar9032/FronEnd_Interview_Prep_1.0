@@ -175,3 +175,26 @@ __4. Consistency and Standardization:__ Semantic tags promote a standardized app
 __5. Improved Maintainability:__ With a clear structure provided by semantic tags, the codebase becomes easier to maintain. Updates and changes can be made more efficiently, as the roles of different sections are well-defined.
 
 __6. Separation of Concerns:__ Semantic tags help separate content from design. This separation allows developers to apply styles using CSS and dynamic behaviors using JavaScript more effectively, leading to a more maintainable and scalable codebase.
+
+
+## what are attributes in html?
+Attributes in HTML provide additional information about HTML elements. They are always included in the opening tag and typically come in name/value pairs like name="value". 
+
+```html
+<element attribute="value">Content</element>
+```
+
+Common Attributes: Many attributes are commonly used across different elements.
+
+__id:__ Uniquely identifies an element within a document.
+```html
+<div id="header">This is a header.</div>
+```
+__class:__ Specifies one or more class names for an element, used for CSS and JavaScript.
+```html
+<p class="intro">This is an introductory paragraph.</p>
+```
+__style:__ Provides inline CSS styles for an element.
+```html
+<p style="color:blue;">This text is blue.</p>
+```
