@@ -1,6 +1,20 @@
-## What are Hooks and what are the benifits of the hooks?
+1. [What are Hooks and what are the benefits of the hooks?](#what-are-hooks-and-what-are-the-benefits-of-the-hooks)
 
-# Definition of Hooks in React
+2. [What is useReducer, why do we use it? Or can we replace State with useReducer?](#what-is-usereducer-why-do-we-use-it-or-can-we-replace-state-with-usereducer)
+
+3. [Why do we use useRef? How to store the previous state in React? How can we interact with DOM elements without re-rendering?](#why-do-we-use-useref-how-to-store-the-previous-state-in-react-how-can-we-interact-with-dom-elements-without-re-rendering)
+
+4. [What is useMemo? What is the purpose of using useMemo hook?](#what-is-usememo-what-is-the-purpose-of-using-usememo-hook)
+
+5. [What is useCallback? What is the purpose of using useCallback hook?](#what-is-usecallback-what-is-the-purpose-of-using-usecallback-hook)
+
+## What is useCallback? What is the purpose of using useCallback hook?
+
+
+
+
+
+## What are Hooks and what are the benefits of the hooks?
 
 Hooks are special functions introduced in React 16.8 that allow developers to use state and other React features in functional components. Before hooks, these features were only available in class components. Hooks provide a more functional and cleaner approach to manage state, lifecycle methods, and other functionalities in React components.
 
@@ -27,7 +41,7 @@ Hooks are special functions introduced in React 16.8 that allow developers to us
 
 
 
-## 1. What is 'useReducer' why we use them? Or can we replace State with useReducer?
+## What is useReducer, why do we use it? Or can we replace State with useReducer?
    _`useReducer` is used when the state has complex logic that involves multiple sub-values or when the next state depends on the previous one. We avoid using `useState` in such cases._
 
  #### Example Using `useState`:
@@ -91,7 +105,7 @@ export default Counter;
 ```
 ---
 
-## 2. Why we use `useRef`? or How to store the previous state in react? How we can interact with DOM elements witout re-rendering?
+## Why do we use useRef? How to store the previous state in React? How can we interact with DOM elements without re-rendering?
 
 ### 1. `useRef` Hook to Store Previous State
 
@@ -156,7 +170,7 @@ export default FocusInputExample;
 
 ```
 
-## 3. Why use `useMemo` Hook? What is the purpose of using `useMemo` hook?
+## What is useMemo? What is the purpose of using useMemo hook?
 
 _The useMemo hook in React is used to memoize a computed value so that it is only recalculated when one of its dependencies changes. This can improve the performance of a React application by avoiding unnecessary recalculations of expensive functions._
 
@@ -204,3 +218,5 @@ export default ExpensiveCalculationComponent;
 ```
 
 _**Note:**_ if we memoize the expensiveCalculation fn then it we be run when its dependecies are changed. Like if we do not memoize then that run every re-render of the page.
+
+## What is useCallback? What is the purpose of using useCallback hook?
