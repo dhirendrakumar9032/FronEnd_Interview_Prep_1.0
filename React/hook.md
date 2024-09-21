@@ -1,12 +1,3 @@
-1. [What are Hooks and what are the benefits of the hooks?](#what-are-hooks-and-what-are-the-benefits-of-the-hooks)
-
-2. [What is useReducer, why do we use it? Or can we replace State with useReducer?](#what-is-usereducer-why-do-we-use-it-or-can-we-replace-state-with-usereducer)
-
-3. [Why do we use useRef? How to store the previous state in React? How can we interact with DOM elements without re-rendering?](#why-do-we-use-useref-how-to-store-the-previous-state-in-react-how-can-we-interact-with-dom-elements-without-re-rendering)
-
-4. [What is useMemo? What is the purpose of using useMemo hook?](#what-is-usememo-what-is-the-purpose-of-using-usememo-hook)
-
-5. [What is useCallback? What is the purpose of using useCallback hook?](#what-is-usecallback-what-is-the-purpose-of-using-usecallback-hook)
 
 ## What is useCallback? What is the purpose of using useCallback hook?
 
@@ -220,3 +211,22 @@ export default ExpensiveCalculationComponent;
 _**Note:**_ if we memoize the expensiveCalculation fn then it we be run when its dependecies are changed. Like if we do not memoize then that run every re-render of the page.
 
 ## What is useCallback? What is the purpose of using useCallback hook?
+
+
+useCallback is a hook in React that allows you to memoize functions. This means that it returns a memoized version of the function that only changes if one of the dependencies has changed. This is useful for optimizing performance, especially in components that rely on reference equality to prevent unnecessary renders.
+
+```js
+import React, { useCallback, useState } from 'react';
+
+function MyComponent() {
+  const [count, setCount] = useState(0);
+
+  const increment = useCallback(() => {
+    setCount(c => c + 1);
+  }, [setCount]);  // Dependencies array
+
+  return <button onClick={increment}>Count: {count}</button>;
+}
+
+
+```
