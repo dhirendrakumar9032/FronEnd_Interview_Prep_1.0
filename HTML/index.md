@@ -15,6 +15,7 @@
 Internal CSS involves using the style tag within the head section of the HTML document. This method applies styles to the entire document.
 
 ```html
+dfd
 <style>
     body {
       background-color: lightgrey;
