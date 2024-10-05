@@ -91,25 +91,37 @@ asyncFunction1(() => {
 This Callback hell can overcome with promises like this and this called __promise chaining__.
 
 ```js
-function runAsyncOperation(message, duration) {
-  return new Promise((resolve) => {
+function test1() {
+  return new Promise(resolve => {
     setTimeout(() => {
-      console.log(message);
+      console.log('test 1');
       resolve();
-    }, duration);
+    }, 3000);
   });
 }
 
-// Use the generic function to run each asynchronous operation
-runAsyncOperation("Async Function 1 Done", 1000)
-  .then(() => runAsyncOperation("Async Function 2 Done", 1000))
-  .then(() => runAsyncOperation("Async Function 3 Done", 1000))
-  .then(() => {
-    console.log("All Async Functions Completed");
-  })
-  .catch((error) => {
-    console.error("An error occurred:", error);
+function test2() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      console.log('test 2');
+      resolve();
+    }, 300);
   });
+}
+
+function test3() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      console.log('test 3');
+      resolve();
+    }, 2000);
+  });
+}
+
+test1()
+  .then(() => test2())
+  .then(() => test3());
+
 
 
 ```
@@ -142,26 +154,40 @@ print(); //Api called
 //We can resolve above promise chaining using async/await like this
 
 ```js
-function runAsyncOperation(message, duration) {
-  return new Promise((resolve) => {
+function test1() {
+  return new Promise(resolve => {
     setTimeout(() => {
-      console.log(message);
+      console.log('test 1');
       resolve();
-    }, duration);
+    }, 3000);
   });
 }
 
-async function performOperations() {
-  try {
-    await runAsyncOperation("Async Function 1 Done", 1000);
-    await runAsyncOperation("Async Function 2 Done", 1000);
-    await runAsyncOperation("Async Function 3 Done", 1000);
-    console.log("All Async Functions Completed");
-  } catch (error) {
-    console.error("An error occurred:", error);
-  }
+function test2() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      console.log('test 2');
+      resolve();
+    }, 300);
+  });
 }
 
-performOperations();
+function test3() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      console.log('test 3');
+      resolve();
+    }, 2000);
+  });
+}
+
+async function runTests() {
+  await test1();
+  await test2();
+  await test3();
+}
+
+runTests();
+
 
 ```

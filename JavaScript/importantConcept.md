@@ -132,3 +132,12 @@ function curriedAdd(a) {
 const add5 = curriedAdd(5);
 console.log(add5(10)); // 15
 ```
+
+## What is template dead zone?
+
+- In JavaScript, a temporal dead zone (TDZ) is a period of time when a variable is declared but not yet initialized with a value, and therefore cannot be accessed
+
+```js
+conosle.log(a); //this is temporal dead zone.
+let a;
+```

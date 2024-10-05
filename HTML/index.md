@@ -161,7 +161,7 @@ Suitable for analytics, ads, or any script that can run independently.
 Ideal for improving page load times by not blocking HTML parsing.
 
 
-## Why do we use symentic tag?
+## 6. Why do we use symentic tag?
 
 Semantic tags in HTML provide meaningful structure to web pages by describing the content they contain. Their use offers several key benefits:
 
@@ -178,7 +178,13 @@ __5. Improved Maintainability:__ With a clear structure provided by semantic tag
 __6. Separation of Concerns:__ Semantic tags help separate content from design. This separation allows developers to apply styles using CSS and dynamic behaviors using JavaScript more effectively, leading to a more maintainable and scalable codebase.
 
 
-## what are attributes in html?
+## 7. What are symentic tag and non symentic tag?
+
+Semantic tags are elements in HTML that clearly describe their meaning both to the browser and the developer. Examples include `<article>`, `<footer>`, `<header>`, `<nav>`, and `<section>`, which indicate the role or purpose of the content they enclose.
+
+Non-semantic tags, on the other hand, don't provide any information about the content inside them. Common examples are `<div>` and `<span>`, which serve purely as containers without conveying any meaning about their content. They are used when no other semantic element is appropriate and are often used for styling or as hooks for JavaScript.
+
+## 8. what are attributes in html?
 Attributes in HTML provide additional information about HTML elements. They are always included in the opening tag and typically come in name/value pairs like name="value". 
 
 ```html
@@ -199,3 +205,48 @@ __style:__ Provides inline CSS styles for an element.
 ```html
 <p style="color:blue;">This text is blue.</p>
 ```
+
+## 9. What is the purpose of the `<!DOCTYPE>` declaration in HTML?
+
+The `<!DOCTYPE>` declaration tells the web browser which version of HTML the page is written in, ensuring it renders the page correctly. Without it, the browser might display the page improperly by falling back to an outdated rendering mode. For HTML5, it's written as `<!DOCTYPE html>`.
+
+## 10. What are all the inline and block elements in HTML?
+
+Here's a list of commonly used inline and block elements in HTML:
+
+**Inline Elements:**
+- `<a>`: Anchor tag for hyperlinks.
+- `<span>`: Generic inline container.
+- `<img>`: Image element.
+- `<input>`: Input field.
+- `<label>`: Label for an input element.
+- `<b>`: Bold text.
+- `<i>`: Italic text.
+- `<em>`: Emphasized text.
+- `<strong>`: Strong importance text.
+- `<br>`: Line break.
+- `<small>`: Smaller text.
+- `<sub>`: Subscript.
+- `<sup>`: Superscript.
+- `<button>`: Clickable button.
+
+**Block Elements:**
+- `<div>`: Generic container for flow content.
+- `<p>`: Paragraph.
+- `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>`: Heading levels.
+- `<ul>`: Unordered list.
+- `<ol>`: Ordered list.
+- `<li>`: List item.
+- `<table>`: Table element.
+- `<header>`: Section header.
+- `<footer>`: Section footer.
+- `<section>`: Section of a document.
+- `<article>`: Independent, self-contained composition.
+- `<nav>`: Navigation links.
+- `<aside>`: Sidebar for tangentially related content.
+- `<blockquote>`: Block quotation.
+- `<form>`: Form for user input.
+
+## 11. Can we use custom tags in HTML, and how do they work similarly to standard tags like `<span>` or `<div>`?
+
+- Yes, you can use custom tags in HTML. Browsers treat unrecognized tags as inline elements, similar to `<span>`, until styled with CSS.
