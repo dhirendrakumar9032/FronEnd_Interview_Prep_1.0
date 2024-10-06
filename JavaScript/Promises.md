@@ -1,6 +1,19 @@
 ## What are the promises in javascript?
 A JavaScript Promise is an object that handles the outcome of an asynchronous operation, either success or failure.
 
+```js
+   const myPromise = new Promise((resolve, reject) => {
+    // Asynchronous operation
+    const success = true; // Simulate success or failure
+    if (success) {
+        resolve('Operation was successful!');
+    } else {
+        reject('Operation failed.');
+    }
+   });
+
+```
+
 A Promise in JavaScript can be in one of three states:
 
 1. **Pending**: The initial state of a promise. The operation associated with the promise has not yet completed, and the promise is waiting for a resolution or rejection.

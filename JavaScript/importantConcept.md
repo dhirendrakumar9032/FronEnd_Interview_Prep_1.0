@@ -138,6 +138,36 @@ console.log(add5(10)); // 15
 - In JavaScript, a temporal dead zone (TDZ) is a period of time when a variable is declared but not yet initialized with a value, and therefore cannot be accessed
 
 ```js
+{
+//this is temporal dead zone
 conosle.log(a); //this is temporal dead zone.
 let a;
+}
 ```
+
+## What is generator function?
+
+- A generator function is a special type of function in JavaScript that can pause its execution and resume later, allowing it to produce a sequence of results over time rather than all at once.
+
+**Generator Function**: A function that can stop at each `yield` point and continue from there when asked.
+
+### Example
+
+Here's a very straightforward example:
+
+```javascript
+  function* countToThree() {
+    yield 1;
+    yield 2;
+    yield 3;
+  }
+
+  const counter = countToThree();  // Create the generator object
+  console.log(counter.next().value);  // Outputs: 1
+  console.log(counter.next().value);  // Outputs: 2
+  console.log(counter.next().value);  // Outputs: 3
+```
+
+In this example:
+- The function `countToThree` is a generator that yields numbers 1 through 3.
+- Each call to `counter.next()` resumes the function until it hits the next `yield`, outputting the next number.
