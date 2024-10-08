@@ -104,31 +104,43 @@ function showAlert() {
 
 ## 3 How to HTML file render to the brawaser?
 
-### 1. Loading the Webpage in the Browser
-When you load an HTML file in the browser, the following steps occur:
+When a `<script>` tag is placed in the `<head>` of an HTML document without using the `defer` or `async` attributes, it affects the page loading process in a specific way. Here’s a detailed look at what happens in this scenario:
 
-#### Step 1: HTML Parsing
-The browser reads the HTML file from top to bottom.
-It constructs the Document Object Model (DOM), a tree structure representing the HTML document.
-It encounters `<link>` and `<script>` tags and starts loading the CSS and JavaScript files.
+### 1. **HTML Parsing Begins**
+The browser starts parsing the HTML document from top to bottom. When it encounters any element, such as a `<link>` or `<meta>`, it processes them accordingly.
 
-#### Step 2: CSS Parsing
-The browser reads the CSS file(s).
-It constructs the CSS Object Model (CSSOM), a tree structure representing the CSS rules.
-It applies the CSS rules to the DOM to determine the final appearance of each element.
+### 2. **Script Tag Encountered**
+When the parser reaches the `<script>` tag in the `<head>`:
+- **Downloading:** The browser immediately stops parsing the HTML document and starts downloading the script file. This halt in parsing is necessary because the script might contain code that modifies the DOM structure or CSSOM, and hence, the browser needs to ensure it has the latest script content before continuing.
+- **Execution:** After the script is downloaded, it is executed. The HTML parsing remains paused during both the download and execution phases.
 
-#### Step 3: JavaScript Execution
-The browser reads and executes the JavaScript file(s).
-JavaScript can manipulate the DOM and CSSOM, adding interactivity and dynamic content.
+### 3. **Parsing Resumes**
+Once the script has been executed, the browser resumes the HTML parsing where it left off. If there are more scripts, images, stylesheets, or other resources ahead, it will handle each as it comes across them.
 
-### 2. Rendering the Page
-The browser combines the DOM and CSSOM to create the Render Tree, which represents the visual structure of the page.
-The Render Tree is used to layout the elements, calculating their positions and sizes.
-The browser paints the pixels on the screen to display the final rendered page.
+### 4. **Implications of Blocking Scripts**
+- **Rendering Delay:** Because the script blocks the parsing of HTML, it can delay the rendering of the page. This delay occurs because the browser must complete the script execution to continue parsing the rest of the HTML, which could include visible content and layout information.
+- **Performance Impact:** If the script is large or the server response is slow, the impact on performance can be significant. The user might see a blank screen or incomplete page for a longer duration, affecting the perceived load time negatively.
 
-### 3. Handling User Interactions
-JavaScript handles user interactions, such as clicks, scrolls, and inputs.
-Event listeners attached to elements respond to these interactions, potentially updating the DOM and triggering re-rendering.
+### Example
+Here’s an example of how this might look in an HTML document:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="heavy-script.js"></script> <!-- No defer or async; this blocks parsing -->
+</head>
+<body>
+    <h1>Hello, World!</h1> <!-- This waits until the script is completely loaded and executed -->
+</body>
+</html>
+```
+
+In this example, the `<h1>` tag and any other content below the `<script>` tag will not be processed or rendered until `heavy-script.js` is completely downloaded and executed.
+
+
 
 
 ## 4 Where to place Script tag in HTML file is best practice?
