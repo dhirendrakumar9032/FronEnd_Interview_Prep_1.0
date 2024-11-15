@@ -158,7 +158,7 @@ Access to All Elements:
 JavaScript often interacts with HTML elements (e.g., buttons, forms). If the script runs before these elements are loaded, it can't find and manipulate them.
 Placing the script at the end ensures all elements are loaded and ready to be manipulated.
 
-## 5 what is defer and ascync and how the are differ?
+## 5 what is defer and async and how the are differ?
 
 ### defer:
 
