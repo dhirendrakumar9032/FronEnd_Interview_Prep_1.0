@@ -94,3 +94,36 @@ This way, older browsers that do not have the `includes` method natively can sti
     console.log(item, i, arr);
     });
 ```
+
+## 4. write pollyfill for setTimeInterval and clearInterval.
+
+```js
+function customSetInterval(callback, delay) {
+  let intervalId = { active: true }; // Object to track the interval state
+
+  function repeat() {
+    if (intervalId.active) {
+      callback();
+      setTimeout(repeat, delay);
+    }
+  }
+
+  setTimeout(repeat, delay);
+  return intervalId;
+}
+
+function customClearInterval(intervalId) {
+  if (intervalId) {
+    intervalId.active = false; // Set active to false to stop the interval
+  }
+}
+
+const intervalId = customSetInterval(() => {
+  console.log('Hello, every 2 seconds!');
+}, 2000);
+
+setTimeout(() => {
+  customClearInterval(intervalId);
+  console.log('Interval cleared!');
+}, 5000);
+```

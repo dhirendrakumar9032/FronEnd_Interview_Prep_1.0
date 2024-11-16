@@ -80,3 +80,53 @@ In CSS, `position: fixed` makes an element stay in the same place relative to th
     }
 ```
 
+## What is the difference between absolute and relative positioning in CSS?**
+
+### Answer:
+**Absolute Positioning:**
+- An element with `position: absolute` is removed from the normal document flow.
+- It is positioned relative to the nearest positioned ancestor (an ancestor with `position: relative`, `absolute`, `fixed`, or `sticky`). If no such ancestor exists, it positions relative to the `<body>`.
+- Example: 
+  ```css
+  .parent {
+    position: relative;
+  }
+  .child {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+  }
+  ```
+  *Here, `.child` is 10px from the top and 20px from the left of `.parent`.*
+
+**Relative Positioning:**
+- An element with `position: relative` stays in the normal flow and moves relative to its original position.
+- The `top`, `right`, `bottom`, and `left` properties shift it without removing the reserved space.
+- Example:
+  ```css
+  .element {
+    position: relative;
+    top: 10px;
+    left: 20px;
+  }
+  ```
+  *Here, `.element` shifts 10px down and 20px right, but its original space remains.*
+
+
+## Position Property:
+
+ The position property specifies the type of positioning method used for an element.
+
+  There are five different position values:
+
+ - __static__: HTML elements are positioned static by default. Static positioned elements are not affected by the top, bottom, left, and right properties.
+
+ - __relative__: An element with position: relative; is positioned relative to its normal position. Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position. 
+
+ - __fixed__: An element with position: fixed; is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. The top, right, bottom, and left properties are used to position the element.
+
+ - __absolute__: An element with position: absolute; is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed).
+
+ - __sticky__: An element with position: sticky; is positioned based on the user's scroll position.
+
+A sticky element toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed).
