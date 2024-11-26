@@ -6,9 +6,10 @@
 
 1. Inline Style
 2. ID Selector
-3. Class Selector, Attribute Selector, Pseudo-class Selector
-4. Type Selector, Pseudo-element Selector
-5. Universal Selector
+3. Class Selector,
+4. Attribute Selector, Pseudo-class Selector
+5. Type Selector, Pseudo-element Selector
+6. Universal Selector
 
 
 ## 2. What is the difference between `position: fixed` and `position: sticky` in CSS?

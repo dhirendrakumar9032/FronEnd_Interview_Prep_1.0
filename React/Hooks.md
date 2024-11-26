@@ -1,10 +1,4 @@
 
-## What is useCallback? What is the purpose of using useCallback hook?
-
-
-
-
-
 ## What are Hooks and what are the benefits of the hooks?
 
 Hooks are special functions introduced in React 16.8 that allow developers to use state and other React features in functional components. Before hooks, these features were only available in class components. Hooks provide a more functional and cleaner approach to manage state, lifecycle methods, and other functionalities in React components.
@@ -32,7 +26,7 @@ Hooks are special functions introduced in React 16.8 that allow developers to us
 
 
 
-## What is useReducer, why do we use it? Or can we replace State with useReducer?
+## 1. What is useReducer, why do we use it? Or can we replace State with useReducer?
    _`useReducer` is used when the state has complex logic that involves multiple sub-values or when the next state depends on the previous one. We avoid using `useState` in such cases._
 
  #### Example Using `useState`:
@@ -96,7 +90,7 @@ export default Counter;
 ```
 ---
 
-## Why do we use useRef? How to store the previous state in React? How can we interact with DOM elements without re-rendering?
+## 2. Why do we use useRef? How to store the previous state in React? How can we interact with DOM elements without re-rendering?
 
 ### 1. `useRef` Hook to Store Previous State
 

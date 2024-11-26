@@ -1,9 +1,13 @@
-function abc() {
+
+function xyz() {
   console.log(this.name);
+
 }
 
-function xyz(name) {
-  abc();
+// xyz();
+
+const person={
+  name:'dhire'
 }
 
-xyz('Dhirendra');
+xyz.call(person);
