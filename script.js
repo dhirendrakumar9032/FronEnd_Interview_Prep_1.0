@@ -1,13 +1,14 @@
+Array.prototype.myMap=function(callback){
+  let result=[];
 
-function xyz() {
-  console.log(this.name);
+  for(let i in this){
+    result.push(callback(this[i],i,this));
+  }
 
+  return result;
 }
 
-// xyz();
-
-const person={
-  name:'dhire'
-}
-
-xyz.call(person);
+console.log([1,2,3].myMap((item,i,arr)=>{
+  console.log(i,arr);
+  return item*2;
+}))

@@ -147,7 +147,7 @@ let a;
 
 ## What is generator function?
 
-- A generator function is a special type of function in JavaScript that can pause its execution and resume later, allowing it to produce a sequence of results over time rather than all at once.
+- Regular functions return only one, single value (or nothing). Generators can return (“yield”) multiple values, one after another, on-demand. They work great with iterables, allowing to create data streams with ease.
 
 **Generator Function**: A function that can stop at each `yield` point and continue from there when asked.
 

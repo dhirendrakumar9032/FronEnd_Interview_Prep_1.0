@@ -127,7 +127,7 @@ export default PreviousStateExample;
 
 ```
 
-### 2. `useRef` Hook to Interact with DOM Elements
+### 2.1 `useRef` Hook to Interact with DOM Elements
 
 _The `useRef` hook can also be used to directly interact with DOM elements without causing re-renders. This is useful for manipulating elements, such as focusing an input field or scrolling to a specific position._
 
@@ -154,6 +154,39 @@ const FocusInputExample = () => {
 export default FocusInputExample;
 
 ```
+
+### 2.2 Why use forwardRef?
+
+ - Refs can be passed to HTML elements as attributes, but they cannot be passed to other components directly as props. This is why we use forwardRef to pass a ref to a child component. The forwardRef function enables a parent component to directly reference a child DOM node or component instance, maintaining the proper abstraction between components.
+
+ ```js
+ import React, { useRef } from 'react';
+
+// This component forwards the ref it receives to the input element
+const FancyInput = React.forwardRef((props, ref) => (
+  <input ref={ref} type='text' {...props} />
+));
+
+const App = () => {
+  const inputRef = useRef(null);
+
+  const focusInput = () => {
+    if (inputRef.current) {
+      inputRef.current.focus(); // Focuses the input element
+    }
+  };
+
+  return (
+    <div>
+      <FancyInput ref={inputRef} placeholder='Type here...' />
+      <button onClick={focusInput}>Focus the input</button>
+    </div>
+  );
+};
+
+export { App };
+
+ ```
 
 ## What is useMemo? What is the purpose of using useMemo hook?
 

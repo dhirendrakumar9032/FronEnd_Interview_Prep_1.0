@@ -167,40 +167,29 @@ print(); //Api called
 //We can resolve above promise chaining using async/await like this
 
 ```js
-function test1() {
-  return new Promise(resolve => {
+function createPromise(status, msg, delay) {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
-      console.log('test 1');
-      resolve();
-    }, 3000);
+      status ? resolve(msg) : reject(new Error(msg));
+    }, delay);
   });
 }
 
-function test2() {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      console.log('test 2');
-      resolve();
-    }, 300);
-  });
+async function handlePromises() {
+  try {
+    const result1 = await createPromise(true, 'Success1', 1000);
+    console.log(result1);
+    const result2 = await createPromise(true, 'Success2', 2000);
+    console.log(result2);
+    const result3 = await createPromise(true, 'Success3', 3000);
+    console.log(result3);
+  } catch (error) {
+    console.error(error);
+  }
 }
 
-function test3() {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      console.log('test 3');
-      resolve();
-    }, 2000);
-  });
-}
+handlePromises();
 
-async function runTests() {
-  await test1();
-  await test2();
-  await test3();
-}
-
-runTests();
 
 
 ```
