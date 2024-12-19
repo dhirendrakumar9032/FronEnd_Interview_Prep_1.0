@@ -1,3 +1,4 @@
+
 ## What the Events?
 
 - In JavaScript, events are actions or occurrences that happen in the browser that can be detected and handled. Events are usually triggered by the user or the browser itself. Some common types of events include:

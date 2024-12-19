@@ -40,3 +40,4 @@
 - What are controlled and uncontrolled components in React?
 - Why use different UI libraries like Ant Design or Material UI?
 - What is Babel and what does it do?
+- what is Authentication and Authorization.
