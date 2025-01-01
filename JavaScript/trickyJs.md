@@ -39,12 +39,6 @@
     return inner;
     })();
 
-    const object = {
-    reset() {
-        this.counter = 0;
-    },
-    };
-
     count();
     count();
     count();
